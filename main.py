@@ -75,7 +75,8 @@ def main_menu(): #main menu with login logic
                 print("1.check balance")
                 print("2.deposit")
                 print("3.withdraw")
-                print("4.exit")
+                print("4.view transactions")
+                print("5.exit")
                 
                 while True:
                     
@@ -110,6 +111,13 @@ def main_menu(): #main menu with login logic
                     
 
                     elif user_choice == "4":
+                        print("you chose to view transactions")
+                        print(f"your current account is {a_num}")
+                        print("transaction history:")
+                        for transaction in accounts[a_num]["transactions"]:
+                            print(transaction)
+
+                    elif user_choice == "5":
                         print("thank you for using the ATM simulator, goodbye!")
                         break
 
