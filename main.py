@@ -28,7 +28,7 @@ def create_account(): #function to create account
                 return
             else:
                 accounts[a_num] = {"pin" : a_pin,
-                                  "balance" : random.uniform(1, 10000000000),
+                                  "balance" : random.uniform(1, 10000000000),#uniform for radom FLOAT number
                                   "transactions" : []
                                   }
                 print(f"account number {a_num} created, you can now log in your new account to start using the ATM simulator")
@@ -58,12 +58,12 @@ def main_menu(): #main menu with login logic
     a_num = int(input("enter your account number(starting from 100 to 200:)"))
     a_pin = int(input("enter your account pin(4 digit number):"))
 
-    if a_num < 100 or a_num > 200:
+    if a_num <= 100 or a_num >= 200:
         print("invalid account number, please try again")
         return
     
     else:
-        if a_pin < 1000 or a_pin > 9999:
+        if a_pin <= 1000 or a_pin >= 9999:
             print("invalid account pin, please try again")
             return
         
@@ -122,7 +122,7 @@ def main_menu(): #main menu with login logic
                         break
 
                     else:
-                        print("invalid choicei , please try again")
+                        print("invalid choice, please try again")
 
                 else:
                     print("invalid account number or pin, please try again")
@@ -136,7 +136,9 @@ def main_menu(): #main menu with login logic
                 main_menu() #after creating account, return to main menu to log in and use the ATM simulator
 
 
-main_menu()         
+main_menu()      
+
+#last git push
             
 
 
